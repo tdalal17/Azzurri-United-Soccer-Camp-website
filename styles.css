@@ -346,6 +346,95 @@ nav ul li a:hover:after {
     min-width: 200px;
 }
 
+/* Reviews Section */
+.reviews-section {
+    background-color: var(--light-gray);
+    position: relative;
+    padding: 80px 0;
+}
+
+.reviews-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--italian-green), var(--italian-white), var(--italian-red));
+    z-index: 5;
+}
+
+.reviews-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 300px;
+    overflow: hidden;
+}
+
+.review-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.6s ease;
+    border-left: 5px solid var(--primary-blue);
+}
+
+.review-card.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.review-stars {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.review-name {
+    font-weight: 700;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+}
+
+.review-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    font-style: italic;
+}
+
+.google-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.google-logo {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.google-rating {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
 /* Coaches Section */
 .coaches-section {
     background-color: var(--white);
@@ -495,99 +584,6 @@ nav ul li a:hover:after {
 
 .about-image img:hover {
     transform: scale(1.02);
-}
-
-/* Camp Details */
-.camp-details {
-    background-color: var(--white);
-    position: relative;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGE0ZjljIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=');
-}
-
-.camp-details:before, .camp-details:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    z-index: 10;
-}
-
-.camp-details:before {
-    top: 0;
-    background: linear-gradient(to right, var(--italian-green), var(--italian-white), var(--italian-red));
-}
-
-.camp-details:after {
-    bottom: 0;
-    background: linear-gradient(to right, var(--italian-green), var(--italian-white), var(--italian-red));
-}
-
-.details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-}
-
-.detail-card {
-    background: white;
-    color: var(--dark-gray);
-    padding: 40px 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    transition: all 0.5s ease;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 4px solid var(--primary-blue);
-}
-
-.detail-card:before {
-    content: '';
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(0,70,170,0.05) 0%, rgba(0,70,170,0) 70%);
-    top: -25%;
-    left: -25%;
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-
-.detail-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-}
-
-.detail-card:hover:before {
-    opacity: 1;
-}
-
-.detail-card i {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    color: var(--primary-blue);
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.detail-card:hover i {
-    transform: scale(1.2);
-    color: var(--primary-blue);
-}
-
-.detail-card h3 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--primary-blue);
-}
-
-.detail-card p {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    color: #555;
 }
 
 /* Media Section */
@@ -976,6 +972,14 @@ footer:before {
     .carousel-wrapper {
         height: 400px;
     }
+    
+    .reviews-container {
+        height: 350px;
+    }
+    
+    .review-card {
+        padding: 30px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1056,6 +1060,14 @@ footer:before {
     .carousel-wrapper {
         height: 350px;
     }
+    
+    .reviews-container {
+        height: 400px;
+    }
+    
+    .review-card {
+        padding: 25px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1072,10 +1084,6 @@ footer:before {
         font-size: 0.9rem;
     }
     
-    .detail-card h3 {
-        font-size: 1.5rem;
-    }
-    
     .footer-links a {
         margin: 0 10px 10px;
         font-size: 1rem;
@@ -1083,5 +1091,13 @@ footer:before {
     
     .carousel-wrapper {
         height: 280px;
+    }
+    
+    .reviews-container {
+        height: 450px;
+    }
+    
+    .review-card {
+        padding: 20px;
     }
 }
