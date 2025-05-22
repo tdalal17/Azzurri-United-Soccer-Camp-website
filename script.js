@@ -1,3 +1,57 @@
+// Sample Google Reviews Data
+const reviews = [
+    {
+        name: "Sarah Johnson",
+        rating: 5,
+        text: "Azzurri United Soccer Camp exceeded our expectations! My son improved dramatically and made lifelong friends. The coaches are professional, patient, and truly care about each player's development."
+    },
+    {
+        name: "Mike Rodriguez",
+        rating: 5,
+        text: "Outstanding soccer camp! Coach Farooq and Roberto are incredible mentors. My daughter's confidence and technical skills have improved tremendously. Highly recommend to any parent!"
+    },
+    {
+        name: "Jennifer Chen",
+        rating: 5,
+        text: "The best investment we made for our child's soccer development. The coaching staff is top-notch and the camp structure is excellent. Our son learned so much and had a blast!"
+    },
+    {
+        name: "David Thompson",
+        rating: 5,
+        text: "Fantastic experience! The coaches focus on both skill development and character building. My daughter looks forward to every session and has grown tremendously as a player."
+    },
+    {
+        name: "Maria Gonzalez",
+        rating: 5,
+        text: "Azzurri United provides the perfect environment for young players to develop. The Italian-style training approach is unique and effective. My son's ball control has improved significantly!"
+    },
+    {
+        name: "Robert Kim",
+        rating: 5,
+        text: "Professional coaching staff with a genuine passion for developing young talent. The camp atmosphere is positive and supportive. My daughter can't wait for the next session!"
+    },
+    {
+        name: "Lisa Williams",
+        rating: 5,
+        text: "Amazing soccer camp! The coaches are knowledgeable, patient, and create a fun learning environment. My son has improved his technique and tactical understanding remarkably."
+    },
+    {
+        name: "Ahmed Hassan",
+        rating: 5,
+        text: "Top-quality soccer training! Coach Roberto's technical expertise and Coach Farooq's leadership create the perfect combination. My daughter's skills have reached a new level."
+    },
+    {
+        name: "Karen Smith",
+        rating: 5,
+        text: "Excellent program that focuses on individual player development. The coaches provide personalized attention and create a positive team environment. Highly recommended!"
+    },
+    {
+        name: "Tony Martinez",
+        rating: 5,
+        text: "Outstanding soccer camp experience! The training sessions are well-structured and engaging. My son has developed both his technical skills and love for the game."
+    }
+];
+
 // Mobile menu toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const nav = document.querySelector('nav');
@@ -124,27 +178,84 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(autoplayInterval);
         startAutoplay();
     }
+
+    // Reviews Carousel
+    const reviewsContainer = document.querySelector('.reviews-container');
+    let currentReviewIndex = 0;
+    let reviewAutoplayInterval;
+
+    function createReviewCard(review) {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        
+        const stars = '★'.repeat(review.rating);
+        
+        card.innerHTML = `
+            <div class="review-header">
+                <div class="review-stars">${stars}</div>
+                <div class="review-name">${review.name}</div>
+            </div>
+            <div class="review-text">"${review.text}"</div>
+        `;
+        
+        return card;
+    }
+
+    function initializeReviews() {
+        // Create review cards
+        reviews.forEach((review, index) => {
+            const card = createReviewCard(review);
+            if (index === 0) card.classList.add('active');
+            reviewsContainer.appendChild(card);
+        });
+
+        // Start auto-rotation
+        startReviewAutoplay();
+    }
+
+    function showReview(index) {
+        const reviewCards = document.querySelectorAll('.review-card');
+        
+        // Remove active class from all cards
+        reviewCards.forEach(card => card.classList.remove('active'));
+        
+        // Add active class to current card
+        if (reviewCards[index]) {
+            reviewCards[index].classList.add('active');
+        }
+        
+        currentReviewIndex = index;
+    }
+
+    function nextReview() {
+        const nextIndex = (currentReviewIndex + 1) % reviews.length;
+        showReview(nextIndex);
+    }
+
+    function startReviewAutoplay() {
+        clearInterval(reviewAutoplayInterval);
+        reviewAutoplayInterval = setInterval(nextReview, 5000); // 5 seconds
+    }
+
+    // Initialize reviews
+    initializeReviews();
+
+    // Pause reviews on hover
+    reviewsContainer.addEventListener('mouseenter', () => {
+        clearInterval(reviewAutoplayInterval);
+    });
+
+    reviewsContainer.addEventListener('mouseleave', () => {
+        startReviewAutoplay();
+    });
 });
 
 // Animation on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const detailCards = document.querySelectorAll('.detail-card');
     const mediaCards = document.querySelectorAll('.media-card');
     const contactDetails = document.querySelectorAll('.contact-detail');
     const flyerContainer = document.querySelector('.carousel-container');
     const coachCards = document.querySelectorAll('.coach-card');
-    
-    // Set initial styles for animation
-    detailCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(50px)';
-        card.style.transition = 'all 0.8s ease';
-        
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 300 + (index * 150));
-    });
     
     // Animate coach cards
     coachCards.forEach((card, index) => {
@@ -374,7 +485,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Enlarge cursor on hoverable elements
-    const hoverables = document.querySelectorAll('a, button, .detail-card, .media-card, .contact-detail, .coach-card');
+    const hoverables = document.querySelectorAll('a, button, .media-card, .contact-detail, .coach-card, .review-card');
     hoverables.forEach(el => {
         el.addEventListener('mouseenter', function() {
             cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
