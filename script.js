@@ -1,54 +1,29 @@
-// Sample Google Reviews Data
+// Real Google Reviews Data from Azzurri United Soccer Club
 const reviews = [
     {
-        name: "Sarah Johnson",
+        name: "Hannah Merrill",
         rating: 5,
-        text: "Azzurri United Soccer Camp exceeded our expectations! My son improved dramatically and made lifelong friends. The coaches are professional, patient, and truly care about each player's development."
+        text: "Azzurri United is the place to go if you are looking for an excellent soccer club for your kiddos! The coaches are amazing. They are so understanding and flexible. I would highly recommend to anyone who is looking for a soccer club."
     },
     {
-        name: "Mike Rodriguez",
+        name: "Stephanie Abudayeh",
         rating: 5,
-        text: "Outstanding soccer camp! Coach Farooq and Roberto are incredible mentors. My daughter's confidence and technical skills have improved tremendously. Highly recommend to any parent!"
+        text: "A wonderful organization with an amazing coach! Organized and well planned sessions. High dedication to ensuring players have strong basics to build upon."
     },
     {
-        name: "Jennifer Chen",
+        name: "Talin Nudelman",
         rating: 5,
-        text: "The best investment we made for our child's soccer development. The coaching staff is top-notch and the camp structure is excellent. Our son learned so much and had a blast!"
+        text: "Azzurri United Soccer Club is an amazing place for players of all levels!!! Everyone is so great with the kids!!! They focus on soccer fundamentals and skill development. It's so awesome!!!! If you are looking for a great place to play soccer, this club is 100% worth checking out!"
     },
     {
-        name: "David Thompson",
+        name: "Zaid Rafati",
         rating: 5,
-        text: "Fantastic experience! The coaches focus on both skill development and character building. My daughter looks forward to every session and has grown tremendously as a player."
+        text: "If you're searching for a soccer club for your kid, your search should begin and end with Azzurri United. I cannot speak enough about the coaches, truly first class. Coach Farooq is a wealth of knowledge, he will make sure that your kids learn the game of soccer the correct way, from the beginning, and set them up for success. Coach Rob is so passionate about the game, is driven to see the kids succeed. Whether your kid is 4 years old or 14 years old, this is where they should be."
     },
     {
-        name: "Maria Gonzalez",
+        name: "Setara Sous",
         rating: 5,
-        text: "Azzurri United provides the perfect environment for young players to develop. The Italian-style training approach is unique and effective. My son's ball control has improved significantly!"
-    },
-    {
-        name: "Robert Kim",
-        rating: 5,
-        text: "Professional coaching staff with a genuine passion for developing young talent. The camp atmosphere is positive and supportive. My daughter can't wait for the next session!"
-    },
-    {
-        name: "Lisa Williams",
-        rating: 5,
-        text: "Amazing soccer camp! The coaches are knowledgeable, patient, and create a fun learning environment. My son has improved his technique and tactical understanding remarkably."
-    },
-    {
-        name: "Ahmed Hassan",
-        rating: 5,
-        text: "Top-quality soccer training! Coach Roberto's technical expertise and Coach Farooq's leadership create the perfect combination. My daughter's skills have reached a new level."
-    },
-    {
-        name: "Karen Smith",
-        rating: 5,
-        text: "Excellent program that focuses on individual player development. The coaches provide personalized attention and create a positive team environment. Highly recommended!"
-    },
-    {
-        name: "Tony Martinez",
-        rating: 5,
-        text: "Outstanding soccer camp experience! The training sessions are well-structured and engaging. My son has developed both his technical skills and love for the game."
+        text: "I highly recommend Azzurri United SC for any young soccer player looking to improve their skills in a supportive and fun environment. The coaching staff is outstanding and my child has not only improved his skills but has also gained a real love for the sport. The facility at Streamwood Community Center is awesome and the overall organization of the club is excellent. I truly appreciate the positive, safe, and welcoming atmosphere they've created for all players."
     }
 ];
 
