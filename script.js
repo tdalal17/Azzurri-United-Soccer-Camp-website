@@ -472,3 +472,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// About Section Carousel
+function initializeAboutCarousel() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.about-slide');
+    const dots = document.querySelectorAll('.about-dot');
+    
+    if (slides.length === 0) return;
+    
+    // Auto-rotate every 4 seconds
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }, 4000);
+    
+    // Dot click functionality
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+    
+    function showSlide(index) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Add active class to current slide and dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+}
+
+// Initialize about carousel on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initializeAboutCarousel();
+});
