@@ -166,10 +166,10 @@ nav ul li a:hover:after {
 }
 
 .hero-bg-image {
-    width: 120%;
-    height: 120%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: 10% center;
+    object-position: 70% center;
 }
 
 .hero-overlay {
@@ -178,7 +178,7 @@ nav ul li a:hover:after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 38, 97, 0.6) 0%, rgba(0, 70, 170, 0.5) 100%);
+    background: linear-gradient(90deg, rgba(0, 38, 97, 0.6) 0%, rgba(0, 38, 97, 0.3) 35%, rgba(0, 38, 97, 0.1) 60%, transparent 80%);
     z-index: 2;
 }
 
@@ -190,14 +190,20 @@ nav ul li a:hover:after {
 
 .hero-main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
     align-items: center;
     min-height: 70vh;
 }
 
 .hero-text {
     color: var(--white);
+    max-width: 90%;
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .hero-badge {
