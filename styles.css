@@ -19,6 +19,11 @@
     font-family: 'Montserrat', Arial, sans-serif;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     line-height: 1.6;
     color: var(--dark-gray);
@@ -30,6 +35,18 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
 }
 
 /* Header */
@@ -1115,8 +1132,21 @@ footer:before {
         padding: 70px 0;
     }
     
+    .about-content {
+        flex-direction: column;
+    }
+    
     .about-text, .about-image {
         min-width: 100%;
+    }
+    
+    .about-carousel {
+        height: 250px;
+        margin: 20px 0;
+    }
+    
+    .about-slide img {
+        border: 5px solid var(--white);
     }
     
     .contact-info {
@@ -1161,6 +1191,40 @@ footer:before {
     
     .carousel-wrapper {
         height: 280px;
+    }
+    
+    .about-carousel {
+        height: 200px;
+    }
+    
+    .about-slide img {
+        border: 3px solid var(--white);
+    }
+    
+    .about-text {
+        padding: 0 10px;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .coaches-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .coach-card {
+        margin: 0 20px;
+    }
+    
+    .mission-content {
+        padding: 0 20px;
+    }
+    
+    .mission-content p {
+        font-size: 1rem;
     }
     
     .reviews-container {
