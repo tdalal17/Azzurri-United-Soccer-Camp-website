@@ -1339,6 +1339,10 @@ footer:before {
         padding: 60px 0;
     }
     
+    .hero-bg-image {
+        object-position: center center;
+    }
+    
     .hero-main {
         grid-template-columns: 1fr;
         gap: 40px;
