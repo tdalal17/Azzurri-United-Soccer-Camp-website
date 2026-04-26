@@ -1340,7 +1340,8 @@ footer:before {
     }
     
     .hero-bg-image {
-        object-position: center center;
+        object-fit: contain;
+        object-position: center top;
     }
     
     .hero-main {
