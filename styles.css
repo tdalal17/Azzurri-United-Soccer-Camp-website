@@ -1,8 +1,8 @@
 /* Base Styles */
 :root {
-    --primary-blue: #0046aa; /* Rich Apple/Best Buy blue */
-    --secondary-blue: #002661; /* Darker blue for depth */
-    --accent-yellow: #ffd700; /* Rich gold */
+    --primary-blue: #0046aa;
+    --secondary-blue: #002661;
+    --accent-yellow: #ffd700;
     --italian-green: #009246;
     --italian-red: #ce2b37;
     --italian-white: #ffffff;
@@ -328,11 +328,6 @@ nav ul li a:hover:after {
     transform: scale(1.05);
 }
 
-.hero-visual {
-    display: flex;
-    justify-content: flex-end;
-}
-
 .hero-card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
@@ -579,11 +574,14 @@ nav ul li a:hover:after {
 .carousel-actions {
     display: flex;
     justify-content: center;
+    gap: 20px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .carousel-btn-action {
     min-width: 200px;
+    text-align: center;
 }
 
 /* Reviews Section */
@@ -1009,7 +1007,6 @@ nav ul li a:hover:after {
     margin-bottom: 30px;
     font-size: 2.4rem;
     position: relative;
-    display: inline-block;
     font-weight: 800;
     letter-spacing: 1px;
     padding-bottom: 15px;
@@ -1442,6 +1439,16 @@ footer:before {
     
     .review-card {
         padding: 25px;
+    }
+
+    .carousel-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .carousel-btn-action {
+        width: 80%;
     }
 }
 
