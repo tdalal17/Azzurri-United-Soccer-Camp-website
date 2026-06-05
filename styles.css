@@ -1333,12 +1333,26 @@ footer:before {
     
     .hero {
         min-height: auto;
-        padding: 60px 0;
+        padding: 0;
     }
-    
+
+    .hero-background {
+        position: relative;
+        height: 350px;
+    }
+
     .hero-bg-image {
-        object-fit: contain;
+        object-fit: cover;
         object-position: center top;
+    }
+
+    .hero-content {
+        padding: 40px 0;
+        background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+    }
+
+    .hero-overlay {
+        background: rgba(0, 38, 97, 0.3);
     }
     
     .hero-main {
